@@ -542,7 +542,13 @@ async def perform_emote(team_code: str, uids: list, emote_id: int):
 
     except Exception as e:
         raise Exception(f"Failed to perform emote: {str(e)}")
+@app.route("/")
+def home():
+    return "OK", 200
 
+@app.route("/health")
+def health():
+    return "OK", 200
 
 @app.route('/join')
 def join_team():
